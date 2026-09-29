@@ -4,7 +4,7 @@
 
 All core sections of the personal site, populated with real professional content from `data/`.
 
-- **Hero / Introduction** — Personal intro with personality and tone; comedic self-promotion hook ("Cómo te ven, te tratan y te contratan")
+- **Hero / Introduction** — Personal intro with personality and tone; comedic self-promotion hook (Mirtha Legrand's "Como te ven, te tratan… y si te ven bien, te contratan")
 - **About / Professional profile** — Who Pedro is, how he thinks, what drives him professionally; current role as Solutions Architect at ITX Corp
 - **Career timeline / Experience** — Full work history with context, not just titles and dates:
   - ITX Corp (2019–present): Senior Java SE → Solution Lead → Solutions Architect

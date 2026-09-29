@@ -73,7 +73,7 @@ The site reflects the progression from hands-on engineering toward technical lea
 
 Professional and technically credible, with genuine personality, humor, and irreverence as differentiators — not as decoration. Humor is used sparingly; it never undermines technical credibility.
 
-Includes a comedic take on professional self-promotion, playing with the concept of *"Cómo te ven, te tratan y te contratan"* and its cultural counterpart. References to *"Nada es gratis en la vida"* (El Cuarteto de Nos) and *"Ain't Nothing in This World for Free"* (Cage the Elephant) woven in naturally as expressions of personality.
+Includes a comedic take on professional self-promotion, built on Mirtha Legrand's line *"Como te ven, te tratan. Si te ven mal, te maltratan. Y si te ven bien, te contratan."* References to *"Nada es gratis en la vida"* (El Cuarteto de Nos) and *"Ain't Nothing in This World for Free"* (Cage the Elephant) woven in naturally as expressions of personality.
 
 ### Education
 
