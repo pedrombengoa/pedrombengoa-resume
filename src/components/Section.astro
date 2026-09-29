@@ -1,0 +1,18 @@
+---
+interface Props {
+  id: string;
+  eyebrow: string;
+  title: string;
+  class?: string;
+}
+
+const { id, eyebrow, title, class: className } = Astro.props;
+---
+
+<section id={id} aria-labelledby={`${id}-title`} class:list={['container-page scroll-mt-20 pt-20 sm:pt-28', className]}>
+  <p class="eyebrow">{eyebrow}</p>
+  <h2 id={`${id}-title`} class="mt-2 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">{title}</h2>
+  <div class="mt-8 sm:mt-10">
+    <slot />
+  </div>
+</section>

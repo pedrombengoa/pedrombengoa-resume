@@ -1,0 +1,54 @@
+---
+import { render } from 'astro:content';
+import DetailShell from './DetailShell.astro';
+import { localizedPath, useTranslations, type Lang } from '../../i18n/utils';
+import { getLocalizedEntries } from '../../lib/content';
+import { articleSchema } from '../../lib/structured-data';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+}
+
+const { lang, slug } = Astro.props;
+const t = useTranslations(lang);
+const all = await getLocalizedEntries('caseStudies', lang);
+const index = all.findIndex((c) => c.slug === slug);
+const { entry } = all[index];
+const { Content } = await render(entry);
+const d = entry.data;
+const path = `/case-studies/${slug}/`;
+const neighbor = (i: number) =>
+  all[i] ? { href: localizedPath(lang, `/case-studies/${all[i].slug}/`), title: all[i].entry.data.title } : undefined;
+---
+
+<DetailShell
+  lang={lang}
+  path={path}
+  title={d.title}
+  summary={d.summary}
+  meta={d.shift}
+  section={{ name: t('nav.caseStudies'), anchor: 'case-studies' }}
+  jsonLd={articleSchema({ lang, path: localizedPath(lang, path), title: d.title, summary: d.summary }, Astro.site!)}
+  prev={neighbor(index - 1)}
+  next={neighbor(index + 1)}
+>
+  <Content />
+
+  <Fragment slot="facts">
+    <div>
+      <h2 class="font-mono text-xs text-muted">{t('caseStudy.context')}</h2>
+      <p class="mt-1">{d.context}</p>
+    </div>
+    <div>
+      <h2 class="font-mono text-xs text-muted">{t('caseStudy.shift')}</h2>
+      <p class="mt-1 font-semibold">{d.shift}</p>
+    </div>
+    <div>
+      <h2 class="font-mono text-xs text-muted">{t('caseStudy.shows')}</h2>
+      <ul class="mt-2 flex flex-wrap gap-1.5">
+        {d.shows.map((s) => <li class="tag">{s}</li>)}
+      </ul>
+    </div>
+  </Fragment>
+</DetailShell>

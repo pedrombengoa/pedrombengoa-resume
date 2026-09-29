@@ -1,0 +1,69 @@
+main:
+  headline:
+    en: Solutions Architect & technical leader
+    es: Solutions Architect y líder técnico
+  tagline:
+    en: Technology is a tool. The interesting part is figuring out what to build, why, and how.
+    es: La tecnología es una herramienta. Lo interesante es descubrir qué construir, por qué y cómo.
+  intro:
+    en:
+      - Fair warning, this is a page where I talk about myself.
+      - There’s an old saying in Spanish, “como te ven, te tratan”, meaning how they see you is how they treat you. At some point the job market added a third part, “y te contratan”, and how they hire you. So here I am, hair combed and shirt tucked in, making an effort to be seen properly.
+      - Ain’t nothing in this world for free, and that includes a decent first impression.
+    es:
+      - Aviso, esta es una página donde hablo de mí.
+      - Dicen que como te ven, te tratan… y, según el mercado laboral, te contratan. Así que acá estoy, peinado y con la camisa adentro del pantalón, haciendo el esfuerzo de que me vean bien.
+      - Ya lo dijo el Cuarteto, nada es gratis en la vida. Ni siquiera una buena primera impresión.
+  location:
+    en: La Plata, Buenos Aires, Argentina
+    es: La Plata, Buenos Aires, Argentina
+  availability:
+    en: Open to remote and selective hybrid roles
+    es: Abierto a roles remotos y algunos híbridos
+  about:
+    en:
+      - I’m a senior software engineer with extensive experience building and evolving complex enterprise applications, and over a decade of technical leadership experience. My background spans software quality, distributed systems, microservices, APIs, integrations, and architecture. I’ve stayed hands-on throughout my career, contributing through design, prototyping, coding, and troubleshooting.
+      - I help teams move from early discovery to working software. I shape solutions, explain trade-offs to technical and non-technical stakeholders, and support delivery. I’ve led and mentored engineers and technical leads, contributed to technical hiring, and helped teams improve how they build, test, and release software.
+      - My experience includes Java and Spring, relational and non-relational databases, microservices and event-driven architectures, and modern web technologies such as Next.js and React. I’ve also worked with Python, Node.js, and C. Recently, I led AI-assisted SDLC adoption across teams supporting a Fortune 500 client. I trained engineers and technical leads on practical LLM workflows and helped establish shared practices for agents, reusable skills, instructions, and MCP servers.
+    es:
+      - Soy ingeniero de software senior, con mucha experiencia construyendo y haciendo evolucionar aplicaciones empresariales complejas, y más de una década de experiencia en liderazgo técnico. Mi recorrido abarca calidad de software, sistemas distribuidos, microservicios, APIs, integraciones y arquitectura. Nunca dejé de meter las manos en el código; sigo aportando en diseño, prototipos, desarrollo y troubleshooting.
+      - Ayudo a los equipos a pasar del descubrimiento inicial a software que funciona. Doy forma a las soluciones, explico los trade-offs a personas técnicas y no técnicas, y acompaño la entrega. Lideré y mentoreé a ingenieros y líderes técnicos, participé en procesos de contratación técnica y ayudé a los equipos a mejorar cómo construyen, prueban y liberan software.
+      - Trabajé con Java y Spring, bases de datos relacionales y no relacionales, arquitecturas de microservicios y orientadas a eventos, y tecnologías web modernas como Next.js y React. También trabajé con Python, Node.js y C. Hace poco lideré la adopción de un SDLC asistido por IA en equipos que trabajan para un cliente Fortune 500. Capacité a ingenieros y líderes técnicos en flujos de trabajo prácticos con LLMs y ayudé a establecer prácticas compartidas para agentes, skills reutilizables, instrucciones y servidores MCP.
+  reinvention:
+    intro:
+      en: Over nearly 20 years, the way we build software has changed under my feet again and again. Each time, I’ve had to relearn my craft while also leading a team through the same change, coaching engineers, mentoring technical leads, and keeping delivery going while everything shifted.
+      es: En casi 20 años, la forma de construir software cambió bajo mis pies una y otra vez. Cada vez tuve que volver a aprender el oficio mientras guiaba a un equipo a través del mismo cambio, entrenando ingenieros, mentoreando líderes técnicos y sosteniendo la entrega mientras todo se movía.
+    listLead:
+      en: Some of these transformations were bigger or more impactful than others.
+      es: Algunas de esas transformaciones fueron más grandes o tuvieron más impacto que otras.
+    transformations:
+      - from: { en: Server-rendered backend pages, es: Páginas renderizadas en el backend }
+        to: { en: Rich UI applications, es: Aplicaciones con UI rica }
+      - from: { en: Monoliths, es: Monolitos }
+        to: { en: Microservices, es: Microservicios }
+      - from: { en: Stateful applications, es: Aplicaciones stateful }
+        to: { en: Stateless applications, es: Aplicaciones stateless }
+      - from: { en: SVN, es: SVN }
+        to: { en: Git, es: Git }
+      - from: { en: Managed servers, es: Servidores administrados }
+        to: { en: Cloud services, es: Servicios cloud }
+      - from: { en: Native Android and iOS apps, es: Apps nativas de Android e iOS }
+        to: { en: Cross-platform mobile with React Native, es: Mobile multiplataforma con React Native }
+      - from: { en: Manual coding, es: Programar a mano }
+        to: { en: AI-driven development, es: Desarrollo guiado por IA }
+    closing:
+      en: The pattern repeats. Learn it first, figure out what actually matters, turn it into something others can use, then help everyone on the team get there, not just the early adopters. Reinventing myself is part of the job. Doing it while bringing a team along is the part I care about most.
+      es: El patrón se repite. Aprenderlo primero, entender qué es lo que realmente importa, convertirlo en algo que otros puedan usar y después ayudar a que todo el equipo llegue, no solo los early adopters. Reinventarme es parte del trabajo. Hacerlo mientras llevo a un equipo conmigo es la parte que más me importa.
+  education:
+    degree:
+      en: Bachelor’s Degree in Computer Science
+      es: Licenciatura en Informática
+    school: Universidad Nacional de La Plata
+    note:
+      en: Coursework completed in 2012; degree conferred in 2024 after completing my thesis.
+      es: Cursada completa en 2012; título obtenido en 2024 tras completar la tesis.
+  languages:
+    - name: { en: Spanish, es: Español }
+      level: { en: Native, es: Nativo }
+    - name: { en: English, es: Inglés }
+      level: { en: Professional working proficiency, es: Profesional }

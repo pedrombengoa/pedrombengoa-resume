@@ -1,0 +1,106 @@
+- id: ai
+  order: 1
+  name: { en: AI-enabled engineering, es: Ingeniería con IA }
+  items:
+    - name: GitHub Copilot
+    - name: Claude
+    - name: Codex
+    - name: LLM workflows
+    - name: Spec-driven Development
+    - name: AgentOS
+    - name: MCP servers
+    - name: Agents
+    - name: Prompt engineering
+
+- id: backend
+  order: 2
+  name: { en: Architecture & backend, es: Arquitectura y backend }
+  items:
+    - name: Java
+    - name: Spring Boot
+    - name: Spring Data
+    - name: Spring Security
+    - name: Hibernate / JPA
+    - name: Microservices
+    - name: Event-driven architecture
+    - name: Distributed systems
+    - name: REST
+    - name: SOAP
+    - name: SOA
+    - name: APIs & integrations
+    - name: SQL
+    - name: Struts
+      historical: true
+    - name: GWT
+      historical: true
+    - name: Tomcat / JBoss
+      historical: true
+    - name: ServiceMix
+      historical: true
+    - name: Apache Camel
+      historical: true
+    - name: BPM engines
+      historical: true
+    - name: DB2
+      historical: true
+
+- id: web
+  order: 3
+  name: { en: Web, mobile & other languages, es: Web, mobile y otros lenguajes }
+  items:
+    - name: React
+    - name: Next.js
+    - name: Tailwind CSS
+    - name: Vite
+    - name: React Native
+    - name: Expo
+    - name: WatermelonDB
+    - name: Supabase
+    - name: Node.js
+    - name: Python
+    - name: C (ESP32)
+    - name: AngularJS
+      historical: true
+
+- id: delivery
+  order: 4
+  name: { en: Delivery & platforms, es: Entrega y plataformas }
+  items:
+    - name: CI/CD
+    - name: Jenkins
+    - name: Bitbucket
+    - name: Git
+    - name: Checkmarx (SAST/SCA)
+    - name: JFrog Artifactory
+    - name: XL Deploy / XL Release
+    - name: OpenShift
+    - name: Kubernetes
+    - name: Docker
+    - name: Terraform / IaaS concepts
+    - name: SVN
+      historical: true
+
+- id: quality
+  order: 5
+  name: { en: Quality & observability, es: Calidad y observabilidad }
+  items:
+    - name: JUnit
+    - name: TestNG
+    - name: Playwright
+    - name: Selenium
+    - name: JMeter
+    - name: SoapUI
+    - name: New Relic
+    - name: Splunk
+    - name: Grafana
+    - name: Distributed tracing
+    - name: Quality gates
+
+- id: learning
+  order: 6
+  name: { en: Currently learning, es: Aprendiendo ahora }
+  items:
+    - name: LangChain
+    - name: LangGraph
+    - name: LangSmith
+    - name: AWS / cloud architecture

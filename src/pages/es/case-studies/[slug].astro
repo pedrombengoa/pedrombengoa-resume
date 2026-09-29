@@ -1,0 +1,13 @@
+---
+import CaseStudyPage from '../../../components/detail/CaseStudyPage.astro';
+import { getLocalizedEntries } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const entries = await getLocalizedEntries('caseStudies', 'es');
+  return entries.map(({ slug }) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+
+<CaseStudyPage lang="es" slug={slug} />

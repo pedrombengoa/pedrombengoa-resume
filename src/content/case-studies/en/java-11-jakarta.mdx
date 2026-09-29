@@ -1,0 +1,26 @@
+---
+title: Moving from Java 8 and javax to Java 11 and jakarta
+summary: Prove the migration on one application, write it down, then let the team run with it.
+context: ITX Corp
+shift: Java 8 + javax.* → Java 11 + jakarta.*
+shows: [Self-directed investigation, De-risking with a pilot, Documentation, Enabling others to execute]
+order: 4
+---
+
+## The problem
+
+The team needed to migrate four or five applications from Java 8 to Java 11. As part of the upgrade, package references also had to move from the `javax.*` namespace to `jakarta.*`, which raised both runtime and compatibility concerns.
+
+## My role
+
+Find a reliable migration approach, prove it on one application, document it, and enable the rest of the team to migrate the remaining applications.
+
+## What I did
+
+- Investigated the migration requirements and worked through the upgrade on one application first.
+- Once the approach was validated, wrote a practical tutorial covering the Java upgrade, the package-reference changes, and the related migration considerations.
+- Trained the rest of the team and supported them as they applied the process to the other applications.
+
+## Result
+
+The team had a repeatable migration process and used it to move all the applications to Java 11 and `jakarta.*`. The knowledge didn’t stay with a single developer.

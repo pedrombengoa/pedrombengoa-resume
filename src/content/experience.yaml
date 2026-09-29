@@ -1,0 +1,104 @@
+- id: itx
+  company: ITX Corp.
+  location: { en: Remote, es: Remoto }
+  start: '2019'
+  end: null
+  order: 1
+  summary:
+    en: Progressed from senior Java engineering into technical leadership and solution architecture, expanding scope from hands-on delivery to architecture definition, team enablement, and AI-enabled engineering transformation.
+    es: Pasé de ingeniería Java senior a liderazgo técnico y arquitectura de soluciones, ampliando el alcance desde la entrega hands-on hacia la definición de arquitectura, la habilitación de equipos y la transformación de la ingeniería con IA.
+  roles:
+    - { title: Solutions Architect, start: '2023-06', end: null }
+    - { title: Solution Lead, start: '2020-02', end: '2023-08' }
+    - { title: Senior Java Software Engineer, start: '2019-03', end: '2020-02' }
+  highlights:
+    - label: { en: Architecture, es: Arquitectura }
+      text:
+        en: Architect for three teams in a Fortune 500 client’s benefits and retirement ecosystem. I define architectural approaches through wikis, component diagrams, critical-path documents, feasibility analysis, and proof-of-concept implementations.
+        es: Arquitecto de tres equipos en el ecosistema de beneficios y retiro de un cliente Fortune 500. Defino enfoques de arquitectura mediante wikis, diagramas de componentes, documentos de camino crítico, análisis de factibilidad y pruebas de concepto.
+    - label: { en: AI-enabled engineering, es: Ingeniería con IA }
+      text:
+        en: Lead training and adoption of Spec-driven Development, MCP integrations, AgentOS practices, and GitHub Copilot workflows across three architecture teams, helping teams use AI to produce architectural guidance, diagrams, documentation, and working prototypes.
+        es: Lidero la capacitación y adopción de Spec-driven Development, integraciones MCP, prácticas de AgentOS y flujos con GitHub Copilot en tres equipos de arquitectura, ayudando a usar IA para generar guías de arquitectura, diagramas, documentación y prototipos funcionales.
+    - label: { en: Payments and retirement, es: Pagos y retiro }
+      text:
+        en: Led teams working on retirement plans and a critical payment-rail ecosystem processing payments worth millions of dollars daily. Technical escalation point for solutions spanning microservices, relational and non-relational databases, headless processes, and multiple business lines.
+        es: Lideré equipos que trabajan en planes de retiro y en un ecosistema crítico de pagos que procesa millones de dólares por día. Punto de escalamiento técnico para soluciones que abarcan microservicios, bases relacionales y no relacionales, procesos headless y varias líneas de negocio.
+    - label: { en: Core-Satellite transformation, es: Transformación Core-Satellite }
+      text:
+        en: Took company-wide technical leadership for adopting decentralized, isolated testing environments based on IaaS concepts. Guided two early-adopter payment teams to develop and integrate about three months of changes without depending on the main branch.
+        es: Asumí el liderazgo técnico a nivel compañía para adoptar ambientes de prueba descentralizados y aislados basados en conceptos de IaaS. Guié a dos equipos de pagos early adopters para desarrollar e integrar unos tres meses de cambios sin depender de la rama principal.
+    - label: { en: Delivery alignment, es: Alineación de la entrega }
+      text:
+        en: Run design sessions with developers, Solutions Leads, product owners, and QA to define solution, rollout, and testing strategies, and present approaches in Communities of Practice for review by client SMEs, architects, and delivery leaders.
+        es: Coordino sesiones de diseño con desarrolladores, Solutions Leads, product owners y QA para definir estrategias de solución, despliegue y pruebas, y presento los enfoques en Comunidades de Práctica para que los revisen SMEs, arquitectos y líderes de entrega del cliente.
+    - label: { en: CI/CD enablement, es: Habilitación de CI/CD }
+      text:
+        en: Reverse-engineered and documented unfamiliar client CI/CD onboarding processes, trained the initial full-stack team, and shared the approach across the organization.
+        es: Hice ingeniería inversa y documenté procesos de onboarding de CI/CD del cliente que nadie conocía bien, capacité al primer equipo full-stack y compartí el enfoque con toda la organización.
+    - label: { en: People leadership, es: Liderazgo de personas }
+      text:
+        en: Lead development teams through hands-on technical guidance, coding support, training, coaching, and career development. For the past three years I’ve also coached Solutions Leads and junior Solutions Architects on role expectations, decision-making, and effective practices.
+        es: Lidero equipos de desarrollo con guía técnica hands-on, soporte en código, capacitación, coaching y desarrollo de carrera. En los últimos tres años también acompañé a Solutions Leads y Solutions Architects junior en las expectativas del rol, la toma de decisiones y las buenas prácticas.
+
+- id: despegar
+  company: Despegar.com
+  location: { en: 'Hybrid · La Plata, Argentina', es: 'Híbrido · La Plata, Argentina' }
+  start: '2018'
+  end: '2019'
+  order: 2
+  roles:
+    - { title: Senior Java Developer, start: '2018', end: '2019' }
+  highlights:
+    - label: { en: Cars, es: Autos }
+      text:
+        en: Integrated third-party APIs so customers could rent cars and purchase car insurance, in a large-scale travel technology environment.
+        es: Integré APIs de terceros para que los clientes pudieran alquilar autos y contratar seguros, en un entorno de tecnología de viajes a gran escala.
+    - label: { en: Destination Activities, es: Actividades en destino }
+      text:
+        en: Independently led the technical initiative to integrate a new activities provider, transform its data model into the company’s model, and release the integration to production.
+        es: Lideré de forma independiente la iniciativa técnica para integrar un nuevo proveedor de actividades, transformar su modelo de datos al de la compañía y llevar la integración a producción.
+
+- id: fluxit
+  company: Flux IT
+  location: { en: 'Hybrid · Buenos Aires, Argentina', es: 'Híbrido · Buenos Aires, Argentina' }
+  start: '2011'
+  end: '2018'
+  order: 3
+  summary:
+    en: Progressed from SOA support and technical leadership into software architecture and senior team leadership, combining hands-on Java development with architecture definition, technical quality, and team coaching across different projects.
+    es: Pasé de soporte SOA y liderazgo técnico a arquitectura de software y liderazgo senior de equipos, combinando desarrollo Java hands-on con definición de arquitectura, calidad técnica y coaching en distintos proyectos.
+  roles:
+    - { title: Senior Technical Team Lead, start: '2017', end: '2018' }
+    - { title: Software Architect, start: '2015', end: '2017' }
+    - { title: Technical Leader, start: '2011', end: '2014' }
+    - { title: SOA Support, start: '2011', end: '2011' }
+  highlights:
+    - label: { en: Port operations platform, es: Plataforma de operaciones portuarias }
+      text:
+        en: Traveled to Buenaventura, Colombia, for two weeks to kick off a one-year project for a seaport web application integrated with Navis N4, a Terminal Operating System. Finalized scope, use cases, business rules, and operational restrictions with local stakeholders, then led the development team through the full lifecycle to production.
+        es: Viajé dos semanas a Buenaventura, Colombia, para iniciar un proyecto de un año, una aplicación web para un puerto integrada con Navis N4, un Terminal Operating System. Cerré alcance, casos de uso, reglas de negocio y restricciones operativas con los stakeholders locales, y después lideré al equipo de desarrollo durante todo el ciclo hasta producción.
+    - label: { en: HMO application support, es: Soporte de aplicaciones para una prepaga }
+      text:
+        en: Led technical work for a production support help desk serving Argentina’s largest private health maintenance organization, maintaining about 15 Java applications built with Java 6, Spring, Struts, DB2, SQL Server, and JBoss.
+        es: Lideré el trabajo técnico de una mesa de soporte productivo para la prepaga privada más grande de Argentina, manteniendo unas 15 aplicaciones Java construidas con Java 6, Spring, Struts, DB2, SQL Server y JBoss.
+    - label: { en: Middleware and BPM, es: Middleware y BPM }
+      text:
+        en: On the same organization’s middleware team, maintained and extended an enterprise service bus built with ServiceMix and Apache Camel, as well as a custom BPM engine similar to jBPM.
+        es: En el equipo de middleware de la misma organización, mantuve y extendí un enterprise service bus construido con ServiceMix y Apache Camel, y un motor BPM propio similar a jBPM.
+    - text:
+        en: Provided architecture consulting, technical training, knowledge transfer, design support, and production troubleshooting across distributed Java applications and enterprise integrations.
+        es: Brindé consultoría de arquitectura, capacitación técnica, transferencia de conocimiento, soporte de diseño y troubleshooting en producción en aplicaciones Java distribuidas e integraciones empresariales.
+
+- id: globant
+  company: Globant
+  location: { en: 'Buenos Aires, Argentina', es: 'Buenos Aires, Argentina' }
+  start: '2008'
+  end: '2011'
+  order: 4
+  roles:
+    - { title: 'Java Developer | QC Leader', start: '2008', end: '2011' }
+  highlights:
+    - text:
+        en: Combined Java development with quality leadership, including functional and regression testing, performance testing, Selenium-based automation, JMeter, client presentations, and team coordination.
+        es: Combiné desarrollo Java con liderazgo de calidad, incluyendo pruebas funcionales y de regresión, pruebas de performance, automatización con Selenium, JMeter, presentaciones a clientes y coordinación del equipo.

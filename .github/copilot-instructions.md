@@ -1,0 +1,1 @@
+Before planning or editing, consult `agent-os/standards/index.yml` and read any standards relevant to the task. Use `.claude/commands/agent-os/` as workflow references; these are Claude Code slash commands and are not expected to run as Copilot commands.

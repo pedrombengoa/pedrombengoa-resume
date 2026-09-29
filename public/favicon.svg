@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    rect { fill: #111110; }
+    .p { fill: #ecebe6; }
+    .dot { fill: #f5a524; }
+  </style>
+  <rect width="64" height="64" rx="14" />
+  <text x="15" y="46" class="p" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="38" font-weight="700">p</text>
+  <circle class="dot" cx="45" cy="42" r="5" />
+</svg>

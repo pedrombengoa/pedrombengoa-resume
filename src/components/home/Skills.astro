@@ -1,0 +1,31 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+import type { getSkills } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  groups: Awaited<ReturnType<typeof getSkills>>;
+}
+
+const { lang, groups } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<p class="max-w-2xl text-muted">{t('section.skills.note')}</p>
+<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  {
+    groups.map(({ data: group }) => (
+      <div class="card p-5">
+        <h3 class="font-semibold">{group.name[lang]}</h3>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {group.items.map((item) => (
+            <li class:list={['tag', item.historical && 'border-dashed opacity-60']}>
+              {item.name}
+              {item.historical && <span class="sr-only"> ({t('section.skills.historical')})</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>

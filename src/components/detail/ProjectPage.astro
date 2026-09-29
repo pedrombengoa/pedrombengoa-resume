@@ -1,0 +1,74 @@
+---
+import { render } from 'astro:content';
+import DetailShell from './DetailShell.astro';
+import { localizedPath, useTranslations, type Lang } from '../../i18n/utils';
+import { getLocalizedEntries } from '../../lib/content';
+import { projectSchema } from '../../lib/structured-data';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+}
+
+const { lang, slug } = Astro.props;
+const t = useTranslations(lang);
+const all = await getLocalizedEntries('projects', lang);
+const index = all.findIndex((p) => p.slug === slug);
+const { entry } = all[index];
+const { Content } = await render(entry);
+const d = entry.data;
+const path = `/projects/${slug}/`;
+const neighbor = (i: number) =>
+  all[i] ? { href: localizedPath(lang, `/projects/${all[i].slug}/`), title: all[i].entry.data.title } : undefined;
+const links = [
+  d.website && { href: d.website, label: t('project.website') },
+  d.repo && { href: d.repo, label: t('project.repo') },
+  d.demo && { href: d.demo, label: t('project.demo') },
+].filter(Boolean) as { href: string; label: string }[];
+---
+
+<DetailShell
+  lang={lang}
+  path={path}
+  title={d.title}
+  summary={d.summary}
+  meta={`${d.kind} · ${t(`project.status.${d.status}`)}`}
+  section={{ name: t('nav.projects'), anchor: 'projects' }}
+  jsonLd={projectSchema({ lang, path: localizedPath(lang, path), title: d.title, summary: d.summary, tech: d.tech, website: d.website, repo: d.repo }, Astro.site!)}
+  prev={neighbor(index - 1)}
+  next={neighbor(index + 1)}
+>
+  <h2>{t('project.problem')}</h2>
+  <p>{d.problem}</p>
+  <Content />
+  <p class="!mt-10 border-l-2 border-accent pl-4 text-muted">{t('project.moreSoon')}</p>
+
+  <Fragment slot="facts">
+    <div>
+      <h2 class="font-mono text-xs text-muted">{t('project.status')}</h2>
+      <p class="mt-1 font-semibold">{t(`project.status.${d.status}`)}</p>
+    </div>
+    <div>
+      <h2 class="font-mono text-xs text-muted">{t('project.tech')}</h2>
+      <ul class="mt-2 flex flex-wrap gap-1.5">
+        {d.tech.map((tech) => <li class="tag">{tech}</li>)}
+      </ul>
+    </div>
+    {
+      links.length > 0 && (
+        <div>
+          <h2 class="font-mono text-xs text-muted">{t('project.links')}</h2>
+          <ul class="mt-2 space-y-1">
+            {links.map((l) => (
+              <li>
+                <a class="link" href={l.href} rel="noopener" target="_blank">
+                  {l.label} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </Fragment>
+</DetailShell>

@@ -1,0 +1,199 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --fg: #1b1b18;
+  --muted: #5c5b55;
+  --line: #e3e1d9;
+  --accent: #a4460a;
+  --accent-soft: #fbe9d7;
+  --on-accent: #ffffff;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #111110;
+    --surface: #1a1a18;
+    --fg: #ecebe6;
+    --muted: #a3a29b;
+    --line: #2d2d29;
+    --accent: #f5a524;
+    --accent-soft: #3a2a10;
+    --on-accent: #111110;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #111110;
+  --surface: #1a1a18;
+  --fg: #ecebe6;
+  --muted: #a3a29b;
+  --line: #2d2d29;
+  --accent: #f5a524;
+  --accent-soft: #3a2a10;
+  --on-accent: #111110;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 68rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-page {
+      padding-inline: 1.5rem;
+    }
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+  .eyebrow::before {
+    content: '// ';
+    color: var(--muted);
+  }
+  .link {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .link:hover {
+    color: var(--accent);
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--fg);
+    background: var(--surface);
+  }
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 0.9rem;
+    background: var(--surface);
+    transition:
+      border-color 150ms ease,
+      transform 150ms ease;
+  }
+  .card-link:hover .card,
+  .card.card-hover:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .prose {
+    max-width: 44rem;
+    font-size: 1.05rem;
+  }
+  .prose h2 {
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+  .prose p {
+    margin-block: 0.9rem;
+    color: var(--fg);
+  }
+  .prose ul {
+    margin-block: 0.9rem;
+    padding-left: 1.25rem;
+    list-style: none;
+  }
+  .prose li {
+    position: relative;
+    margin-block: 0.45rem;
+  }
+  .prose li::before {
+    content: '→';
+    position: absolute;
+    left: -1.25rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+  }
+  .prose code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--accent-soft);
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.3rem;
+  }
+  .prose strong {
+    font-weight: 650;
+  }
+  .prose a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+  }
+}

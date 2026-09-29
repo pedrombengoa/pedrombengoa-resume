@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout lang="en" path="/404/" title="404 — Pedro Bengoa" description="Page not found." noindex>
+  <section class="container-page grid gap-12 py-24 sm:grid-cols-2">
+    <div>
+      <p class="font-mono text-sm text-accent">HTTP 404</p>
+      <h1 class="mt-3 text-4xl font-bold tracking-tight">This page doesn’t exist.</h1>
+      <p class="mt-4 text-muted">
+        I’ve migrated a lot of things in my career, and apparently this URL didn’t make the cut. No rollback plan for this one.
+      </p>
+      <a class="link mt-6 inline-block" href="/">← Back to home</a>
+    </div>
+    <div lang="es">
+      <p class="font-mono text-sm text-accent">HTTP 404</p>
+      <h2 class="mt-3 text-4xl font-bold tracking-tight">Esta página no existe.</h2>
+      <p class="mt-4 text-muted">
+        Migré muchas cosas en mi carrera, y parece que esta URL no llegó. Para esta no hay plan de rollback.
+      </p>
+      <a class="link mt-6 inline-block" href="/es/">← Volver al inicio</a>
+    </div>
+  </section>
+</BaseLayout>

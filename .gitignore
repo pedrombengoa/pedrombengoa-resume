@@ -1,0 +1,38 @@
+# Dependencies and build output
+node_modules/
+dist/
+.astro/
+.wrangler/
+coverage/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+.dev.vars*
+
+# Private content (never publish: compensation, interview prep, internal notes)
+data/Personal_experience.md
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Local Claude Code settings (shared commands in .claude/commands/ are committed)
+.claude/settings.local.json
+
+# Raw LinkedIn export (converted into data/recommendations/)
+data/recomendations/

@@ -1,0 +1,56 @@
+---
+import { localizedPath, ogLocale, type Lang } from '../i18n/utils';
+import { site } from '../config/site';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** Locale-less path, e.g. "/" or "/projects/lex-midas/". */
+  path: string;
+  type?: 'website' | 'article' | 'profile';
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const { lang, title, description, path, type = 'website', jsonLd = [], noindex = false } = Astro.props;
+const siteUrl = Astro.site!;
+const canonical = new URL(localizedPath(lang, path), siteUrl).href;
+const alternates = {
+  en: new URL(localizedPath('en', path), siteUrl).href,
+  es: new URL(localizedPath('es', path), siteUrl).href,
+};
+const ogImage = new URL(`/og/og-${lang}.png`, siteUrl).href;
+const serialize = (data: Record<string, unknown>) => JSON.stringify(data).replace(/</g, '\\u003c');
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content={site.name} />
+{noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+{
+  !noindex && (
+    <>
+      <link rel="alternate" hreflang="en" href={alternates.en} />
+      <link rel="alternate" hreflang="es" href={alternates.es} />
+      <link rel="alternate" hreflang="x-default" href={alternates.en} />
+    </>
+  )
+}
+
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content={ogLocale[lang]} />
+<meta property="og:locale:alternate" content={ogLocale[lang === 'en' ? 'es' : 'en']} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+{jsonLd.map((data) => <script is:inline type="application/ld+json" set:html={serialize(data)} />)}

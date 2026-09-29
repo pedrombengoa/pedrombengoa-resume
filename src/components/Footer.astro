@@ -1,0 +1,26 @@
+---
+import { useTranslations, type Lang } from '../i18n/utils';
+import { site } from '../config/site';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-line">
+  <div class="container-page flex flex-col gap-3 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+    <p>© {year} {t('footer.rights')} · {t('footer.madeWith')}</p>
+    <p class="font-mono text-xs">{t('footer.song')}</p>
+  </div>
+  <div class="container-page pb-10 text-sm">
+    <ul class="flex flex-wrap gap-x-5 gap-y-2 text-muted">
+      <li><a class="hover:text-accent" href={`mailto:${site.email}`}>{site.email}</a></li>
+      <li><a class="hover:text-accent" href={site.linkedin} rel="me noopener" target="_blank">LinkedIn</a></li>
+      {site.github && <li><a class="hover:text-accent" href={site.github} rel="me noopener" target="_blank">GitHub</a></li>}
+    </ul>
+  </div>
+</footer>

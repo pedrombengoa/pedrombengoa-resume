@@ -1,0 +1,49 @@
+---
+import { formatRange, useTranslations, type Lang } from '../../i18n/utils';
+import type { getExperience } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  jobs: Awaited<ReturnType<typeof getExperience>>;
+}
+
+const { lang, jobs } = Astro.props;
+const t = useTranslations(lang);
+const present = t('section.experience.present');
+---
+
+<ol class="relative space-y-14 border-l border-line pl-6 sm:pl-10">
+  {
+    jobs.map(({ data: job }) => (
+      <li class="relative">
+        <span class="absolute top-2 -left-[29px] h-3 w-3 rounded-full border-2 border-accent bg-bg sm:-left-[45px]" aria-hidden="true" />
+        <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+          <h3 class="text-2xl font-semibold tracking-tight">{job.company}</h3>
+          <p class="font-mono text-sm text-muted">
+            {formatRange(job.start, job.end, lang, present)} · {job.location[lang]}
+          </p>
+        </div>
+
+        <ol class="mt-4 flex flex-wrap gap-2" aria-label="Roles">
+          {job.roles.map((role, i) => (
+            <li class:list={['tag', i === 0 && 'border-accent text-accent']}>
+              {role.title}
+              <span class="ml-2 text-muted">{formatRange(role.start, role.end, lang, present)}</span>
+            </li>
+          ))}
+        </ol>
+
+        {job.summary && <p class="mt-5 max-w-3xl text-muted">{job.summary[lang]}</p>}
+
+        <ul class="mt-5 grid max-w-4xl gap-4">
+          {job.highlights.map((h) => (
+            <li class="text-[0.97rem]">
+              {h.label && <strong class="font-semibold">{h.label[lang]}. </strong>}
+              <span class="text-muted">{h.text[lang]}</span>
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))
+  }
+</ol>
