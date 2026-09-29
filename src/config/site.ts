@@ -1,5 +1,5 @@
-// TODO(before launch): replace SITE_URL with the real domain and set GITHUB_URL.
-export const SITE_URL = 'https://pedrobengoa.example';
+// Switch to the custom domain if one is added later.
+export const SITE_URL = 'https://resume.pedrombengoa.workers.dev';
 
 export const site = {
   name: 'Pedro Bengoa',
