@@ -11,8 +11,7 @@ const { lang, groups } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<p class="max-w-2xl text-muted">{t('section.skills.note')}</p>
-<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
   {
     groups.map(({ data: group }) => (
       <div class="card p-5">

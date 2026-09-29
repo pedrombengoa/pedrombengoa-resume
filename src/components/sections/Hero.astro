@@ -1,6 +1,6 @@
 ---
 import { site } from '../../config/site';
-import { useTranslations, type Lang } from '../../i18n/utils';
+import { localizedPath, useTranslations, type Lang } from '../../i18n/utils';
 import type { getProfile } from '../../lib/content';
 
 interface Props {
@@ -34,7 +34,7 @@ const facts = [
       </div>
       <div class="mt-10 flex flex-wrap gap-3">
         <a
-          href="#projects"
+          href={localizedPath(lang, '/projects/')}
           class="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent transition-opacity hover:opacity-90"
         >
           {t('hero.ctaWork')}

@@ -1,0 +1,35 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+import type { getProfile } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  profile: Awaited<ReturnType<typeof getProfile>>;
+}
+
+const { lang, profile } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section aria-labelledby="education-title" class="mt-20 sm:mt-24">
+  <p class="eyebrow">{t('section.education.eyebrow')}</p>
+  <h2 id="education-title" class="mt-2 text-3xl font-semibold tracking-tight">{t('section.education.title')}</h2>
+  <div class="mt-8 grid gap-5 md:grid-cols-2">
+    <div class="card p-6">
+      <h3 class="text-lg font-semibold">{profile.education.degree[lang]}</h3>
+      <p class="mt-1 text-muted">{profile.education.school}</p>
+    </div>
+    <div class="card p-6">
+      <ul class="space-y-3">
+        {
+          profile.languages.map((l) => (
+            <li class="flex items-baseline justify-between gap-4">
+              <span class="font-semibold">{l.name[lang]}</span>
+              <span class="text-right font-mono text-sm text-muted">{l.level[lang]}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

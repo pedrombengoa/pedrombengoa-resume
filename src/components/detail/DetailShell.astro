@@ -14,7 +14,7 @@ interface Props {
   title: string;
   summary: string;
   meta: string;
-  section: { name: string; anchor: string };
+  section: { name: string; path: string };
   jsonLd: Record<string, unknown>;
   prev?: Neighbor;
   next?: Neighbor;
@@ -23,9 +23,10 @@ interface Props {
 const { lang, path, title, summary, meta, section, jsonLd, prev, next } = Astro.props;
 const t = useTranslations(lang);
 const home = localizedPath(lang, '/');
+const sectionHref = localizedPath(lang, section.path);
 const breadcrumbs = [
   { name: t('detail.breadcrumbHome'), path: home },
-  { name: section.name, path: `${home}#${section.anchor}` },
+  { name: section.name, path: sectionHref },
   { name: title, path: localizedPath(lang, path) },
 ];
 ---
@@ -85,7 +86,7 @@ const breadcrumbs = [
       }
     </nav>
     <p class="mt-10">
-      <a class="link text-sm" href={`${home}#${section.anchor}`}>← {t('detail.back')}</a>
+      <a class="link text-sm" href={sectionHref}>← {section.name}</a>
     </p>
   </article>
 </BaseLayout>

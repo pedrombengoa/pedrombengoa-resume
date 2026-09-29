@@ -1,0 +1,40 @@
+---
+import TabPage from '../TabPage.astro';
+import EntryCard from '../EntryCard.astro';
+import { localizedPath, useTranslations, type Lang } from '../../i18n/utils';
+import { getLocalizedEntries } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const projects = await getLocalizedEntries('projects', lang);
+---
+
+<TabPage
+  lang={lang}
+  path="/projects/"
+  title={t('meta.projectsTitle')}
+  description={t('meta.projectsDescription')}
+  eyebrow={t('section.projects.eyebrow')}
+  heading={t('section.projects.title')}
+>
+  <ul class="grid gap-5 md:grid-cols-3">
+    {
+      projects.map(({ entry, slug }) => (
+        <li>
+          <EntryCard
+            href={localizedPath(lang, `/projects/${slug}/`)}
+            title={entry.data.title}
+            summary={entry.data.summary}
+            meta={`${entry.data.kind} · ${t(`project.status.${entry.data.status}`)}`}
+            tags={entry.data.tech.slice(0, 4)}
+            cta={t('card.readMore')}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</TabPage>

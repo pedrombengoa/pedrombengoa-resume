@@ -1,0 +1,40 @@
+---
+import Section from '../Section.astro';
+import { site } from '../../config/site';
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const secondary =
+  'inline-flex items-center rounded-full border border-line px-5 py-2.5 text-sm font-semibold transition-colors hover:border-accent hover:text-accent';
+---
+
+<Section id="contact" eyebrow={t('section.contact.eyebrow')} title={t('section.contact.title')}>
+  <p class="max-w-2xl text-lg">{t('section.contact.text')}</p>
+  <ul class="mt-8 flex flex-wrap gap-3">
+    <li>
+      <a
+        href={`mailto:${site.email}`}
+        class="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent transition-opacity hover:opacity-90"
+      >
+        {t('section.contact.email')} · {site.email}
+      </a>
+    </li>
+    <li>
+      <a href={site.linkedin} rel="me noopener" target="_blank" class={secondary}>{t('section.contact.linkedin')}</a>
+    </li>
+    {
+      site.github && (
+        <li>
+          <a href={site.github} rel="me noopener" target="_blank" class={secondary}>
+            {t('section.contact.github')}
+          </a>
+        </li>
+      )
+    }
+  </ul>
+</Section>

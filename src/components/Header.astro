@@ -2,7 +2,6 @@
 import { localizedPath, useTranslations, type Lang } from '../i18n/utils';
 import { getRecommendations } from '../lib/content';
 import ThemeToggle from './islands/ThemeToggle';
-import MobileMenu from './islands/MobileMenu';
 
 interface Props {
   lang: Lang;
@@ -12,39 +11,44 @@ interface Props {
 
 const { lang, altHref } = Astro.props;
 const t = useTranslations(lang);
-const home = localizedPath(lang, '/');
 const hasRecommendations = (await getRecommendations()).length > 0;
 
-const items = [
-  { href: `${home}#about`, label: t('nav.about') },
-  { href: `${home}#reinvention`, label: t('nav.reinvention') },
-  { href: `${home}#experience`, label: t('nav.experience') },
-  { href: `${home}#projects`, label: t('nav.projects') },
-  { href: `${home}#case-studies`, label: t('nav.caseStudies') },
-  ...(hasRecommendations ? [{ href: `${home}#recommendations`, label: t('nav.recommendations') }] : []),
-  { href: `${home}#contact`, label: t('nav.contact') },
+const tabs = [
+  { path: '/', label: t('nav.home') },
+  { path: '/experience/', label: t('nav.experience') },
+  { path: '/skills/', label: t('nav.skills') },
+  { path: '/projects/', label: t('nav.projects') },
+  { path: '/case-studies/', label: t('nav.caseStudies') },
+  ...(hasRecommendations ? [{ path: '/recommendations/', label: t('nav.recommendations') }] : []),
 ];
+
+const current = Astro.url.pathname.replace(/^\/es(?=\/|$)/, '') || '/';
+const isActive = (path: string) => (path === '/' ? current === '/' : current.startsWith(path));
 ---
 
 <header class="sticky top-0 z-40 border-b border-line bg-bg/85 backdrop-blur">
-  <div class="container-page relative flex h-16 items-center justify-between gap-4">
-    <a href={home} class="font-mono text-sm font-semibold tracking-tight text-fg hover:text-accent">
+  <div class="container-page flex h-16 items-center justify-between gap-4">
+    <a href={localizedPath(lang, '/')} class="shrink-0 font-mono text-sm font-semibold tracking-tight text-fg hover:text-accent">
       pedro<span class="text-accent">.</span>bengoa
     </a>
-    <nav aria-label={t('nav.label')} class="hidden md:block">
-      <ul class="flex items-center gap-5 text-sm text-muted">
+    <nav aria-label={t('nav.label')} class="hidden h-full md:block">
+      <ul class="flex h-full items-stretch gap-1 text-sm">
         {
-          items.map((item) => (
-            <li>
-              <a href={item.href} class="transition-colors hover:text-fg">
-                {item.label}
+          tabs.map((tab) => (
+            <li class="flex">
+              <a
+                href={localizedPath(lang, tab.path)}
+                aria-current={isActive(tab.path) ? 'page' : undefined}
+                class="tab flex items-center px-2.5 lg:px-3"
+              >
+                {tab.label}
               </a>
             </li>
           ))
         }
       </ul>
     </nav>
-    <div class="flex items-center gap-2">
+    <div class="flex shrink-0 items-center gap-2">
       <a
         href={altHref}
         hreflang={lang === 'en' ? 'es' : 'en'}
@@ -56,7 +60,23 @@ const items = [
         {t('lang.switchShort')}
       </a>
       <ThemeToggle client:idle label={t('theme.toggle')} />
-      <MobileMenu client:idle items={items} menuLabel={t('nav.menu')} closeLabel={t('nav.close')} />
     </div>
   </div>
+  <nav aria-label={t('nav.label')} class="border-t border-line md:hidden">
+    <ul class="no-scrollbar flex h-11 snap-x items-stretch overflow-x-auto px-2 text-sm">
+      {
+        tabs.map((tab) => (
+          <li class="flex shrink-0 snap-start">
+            <a
+              href={localizedPath(lang, tab.path)}
+              aria-current={isActive(tab.path) ? 'page' : undefined}
+              class="tab flex items-center px-3"
+            >
+              {tab.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </header>

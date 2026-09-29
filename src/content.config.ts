@@ -21,7 +21,7 @@ const profile = defineCollection({
       transformations: z.array(z.object({ from: l10n, to: l10n })),
       closing: l10n,
     }),
-    education: z.object({ degree: l10n, school: z.string(), note: l10n }),
+    education: z.object({ degree: l10n, school: z.string() }),
     languages: z.array(z.object({ name: l10n, level: l10n })),
   }),
 });

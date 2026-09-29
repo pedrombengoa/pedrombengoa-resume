@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../sections/Hero.astro';
+import About from '../sections/About.astro';
+import Reinvention from '../sections/Reinvention.astro';
+import Contact from '../sections/Contact.astro';
+import { useTranslations, type Lang } from '../../i18n/utils';
+import { getLocalizedEntries, getProfile } from '../../lib/content';
+import { profilePageSchema } from '../../lib/structured-data';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const [profile, caseStudies] = await Promise.all([getProfile(), getLocalizedEntries('caseStudies', lang)]);
+---
+
+<BaseLayout
+  lang={lang}
+  path="/"
+  type="profile"
+  title={t('meta.homeTitle')}
+  description={t('meta.homeDescription')}
+  jsonLd={[profilePageSchema(lang, Astro.site!)]}
+>
+  <Hero lang={lang} profile={profile} />
+  <About lang={lang} profile={profile} />
+  <Reinvention lang={lang} profile={profile} caseStudies={caseStudies} />
+  <Contact lang={lang} />
+</BaseLayout>

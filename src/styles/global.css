@@ -104,6 +104,35 @@
       padding-inline: 1.5rem;
     }
   }
+  .tab {
+    position: relative;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: color 150ms ease;
+  }
+  .tab:hover {
+    color: var(--fg);
+  }
+  .tab[aria-current='page'] {
+    color: var(--fg);
+    font-weight: 600;
+  }
+  .tab[aria-current='page']::after {
+    content: '';
+    position: absolute;
+    left: 0.6rem;
+    right: 0.6rem;
+    bottom: -1px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
   .eyebrow {
     font-family: var(--font-mono);
     font-size: 0.8rem;

@@ -40,9 +40,10 @@ src/
   content/              All site content (see "Editing content")
   content.config.ts     Content collection schemas
   components/
-    home/               Home page sections
+    tabs/               One component per tab page (Home, Experience, Skills, Projects, Case studies, Recommendations)
+    sections/           Building blocks used by the tabs (hero, timeline, skills, ...)
     detail/             Project and case study pages
-    islands/            React islands (theme toggle, mobile menu)
+    islands/            React islands (theme toggle)
   i18n/                 UI strings (ui.ts) and locale helpers (utils.ts)
   layouts/              Base HTML layout
   lib/                  Content queries and JSON-LD builders
@@ -86,6 +87,21 @@ The recommendation text, exactly as written on LinkedIn.
 ```
 
 Recommendations are shown in their original language. They are never translated.
+
+## Pages
+
+The site is split into tabs. Each tab is its own page, with its own URL, title and description:
+
+| Tab             | English              | Spanish                 |
+| --------------- | -------------------- | ----------------------- |
+| Home            | `/`                  | `/es/`                  |
+| Experience      | `/experience/`       | `/es/experience/`       |
+| Skills          | `/skills/`           | `/es/skills/`           |
+| Projects        | `/projects/`         | `/es/projects/`         |
+| Case studies    | `/case-studies/`     | `/es/case-studies/`     |
+| Recommendations | `/recommendations/`  | `/es/recommendations/`  |
+
+Project and case study detail pages live under their tab, for example `/projects/lex-midas/`.
 
 ## i18n and SEO
 

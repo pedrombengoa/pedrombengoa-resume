@@ -1,0 +1,26 @@
+---
+import TabPage from '../TabPage.astro';
+import Recommendations from '../sections/Recommendations.astro';
+import { useTranslations, type Lang } from '../../i18n/utils';
+import { getRecommendations } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const recommendations = await getRecommendations();
+---
+
+<TabPage
+  lang={lang}
+  path="/recommendations/"
+  title={t('meta.recommendationsTitle')}
+  description={t('meta.recommendationsDescription')}
+  eyebrow={t('section.recommendations.eyebrow')}
+  heading={t('section.recommendations.title')}
+  lead={t('section.recommendations.lead')}
+>
+  <Recommendations recommendations={recommendations} />
+</TabPage>

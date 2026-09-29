@@ -2,7 +2,7 @@
 
 ## Phase 1: MVP — Full Content Launch
 
-All core sections of the personal site, populated with real professional content from `data/`.
+All core sections of the personal site, populated with real professional content from `data/`. Sections are organized as tab pages (Home, Experience, Skills, Projects, Case studies, Recommendations), each with its own URL.
 
 - **Hero / Introduction** — Personal intro with personality and tone; comedic self-promotion hook (Mirtha Legrand's "Como te ven, te tratan… y si te ven bien, te contratan")
 - **About / Professional profile** — Who Pedro is, how he thinks, what drives him professionally; current role as Solutions Architect at ITX Corp

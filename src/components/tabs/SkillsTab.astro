@@ -1,0 +1,26 @@
+---
+import TabPage from '../TabPage.astro';
+import Skills from '../sections/Skills.astro';
+import { useTranslations, type Lang } from '../../i18n/utils';
+import { getSkills } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const groups = await getSkills();
+---
+
+<TabPage
+  lang={lang}
+  path="/skills/"
+  title={t('meta.skillsTitle')}
+  description={t('meta.skillsDescription')}
+  eyebrow={t('section.skills.eyebrow')}
+  heading={t('section.skills.title')}
+  lead={t('section.skills.note')}
+>
+  <Skills lang={lang} groups={groups} />
+</TabPage>

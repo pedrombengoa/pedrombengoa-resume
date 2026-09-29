@@ -1,0 +1,19 @@
+---
+import Section from '../Section.astro';
+import { useTranslations, type Lang } from '../../i18n/utils';
+import type { getProfile } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  profile: Awaited<ReturnType<typeof getProfile>>;
+}
+
+const { lang, profile } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<Section id="about" eyebrow={t('section.about.eyebrow')} title={t('section.about.title')}>
+  <div class="max-w-3xl space-y-5 text-lg">
+    {profile.about[lang].map((p) => <p>{p}</p>)}
+  </div>
+</Section>

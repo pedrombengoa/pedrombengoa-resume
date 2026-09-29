@@ -59,9 +59,6 @@ main:
       en: Bachelor’s Degree in Computer Science
       es: Licenciatura en Informática
     school: Universidad Nacional de La Plata
-    note:
-      en: Coursework completed in 2012; degree conferred in 2024 after completing my thesis.
-      es: Cursada completa en 2012; título obtenido en 2024 tras completar la tesis.
   languages:
     - name: { en: Spanish, es: Español }
       level: { en: Native, es: Nativo }

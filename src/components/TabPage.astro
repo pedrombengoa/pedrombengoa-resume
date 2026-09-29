@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  path: string;
+  title: string;
+  description: string;
+  eyebrow: string;
+  heading: string;
+  lead?: string;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { lang, path, title, description, eyebrow, heading, lead, jsonLd } = Astro.props;
+---
+
+<BaseLayout lang={lang} path={path} title={title} description={description} jsonLd={jsonLd}>
+  <div class="container-page pt-12 sm:pt-20">
+    <header class="max-w-3xl">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-balance sm:text-5xl">{heading}</h1>
+      {lead && <p class="mt-5 text-lg text-muted">{lead}</p>}
+    </header>
+    <div class="mt-10 sm:mt-14">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

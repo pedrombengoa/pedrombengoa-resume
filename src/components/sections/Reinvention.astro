@@ -1,0 +1,49 @@
+---
+import Section from '../Section.astro';
+import { localizedPath, useTranslations, type Lang } from '../../i18n/utils';
+import type { getLocalizedEntries, getProfile } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  profile: Awaited<ReturnType<typeof getProfile>>;
+  caseStudies: Awaited<ReturnType<typeof getLocalizedEntries<'caseStudies'>>>;
+}
+
+const { lang, profile, caseStudies } = Astro.props;
+const t = useTranslations(lang);
+const r = profile.reinvention;
+---
+
+<Section id="reinvention" eyebrow={t('section.reinvention.eyebrow')} title={t('section.reinvention.title')}>
+  <div class="max-w-3xl space-y-5 text-lg">
+    <p>{r.intro[lang]}</p>
+    <p class="text-muted">{r.listLead[lang]}</p>
+  </div>
+  <ol class="mt-8 grid gap-3 sm:grid-cols-2">
+    {
+      r.transformations.map((tr, i) => (
+        <li class:list={['card flex flex-wrap items-center gap-x-3 gap-y-1 px-5 py-4', i === r.transformations.length - 1 && 'border-accent sm:col-span-2']}>
+          <span class="font-mono text-xs text-muted" aria-hidden="true">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <span class="text-muted line-through decoration-line decoration-2">{tr.from[lang]}</span>
+          <span class="text-accent" aria-hidden="true">→</span>
+          <span class="font-semibold">{tr.to[lang]}</span>
+        </li>
+      ))
+    }
+  </ol>
+  <p class="mt-8 max-w-3xl text-lg">{r.closing[lang]}</p>
+  <h3 class="mt-10 font-mono text-sm text-muted">{t('section.reinvention.evidence')}</h3>
+  <ul class="mt-3 flex flex-col gap-2">
+    {
+      caseStudies.map(({ entry, slug }) => (
+        <li>
+          <a class="link" href={localizedPath(lang, `/case-studies/${slug}/`)}>
+            {entry.data.shift}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Section>

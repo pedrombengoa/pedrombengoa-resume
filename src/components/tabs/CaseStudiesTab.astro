@@ -1,0 +1,39 @@
+---
+import TabPage from '../TabPage.astro';
+import EntryCard from '../EntryCard.astro';
+import { localizedPath, useTranslations, type Lang } from '../../i18n/utils';
+import { getLocalizedEntries } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const caseStudies = await getLocalizedEntries('caseStudies', lang);
+---
+
+<TabPage
+  lang={lang}
+  path="/case-studies/"
+  title={t('meta.caseStudiesTitle')}
+  description={t('meta.caseStudiesDescription')}
+  eyebrow={t('section.caseStudies.eyebrow')}
+  heading={t('section.caseStudies.title')}
+>
+  <ul class="grid gap-5 md:grid-cols-2">
+    {
+      caseStudies.map(({ entry, slug }) => (
+        <li>
+          <EntryCard
+            href={localizedPath(lang, `/case-studies/${slug}/`)}
+            title={entry.data.title}
+            summary={entry.data.summary}
+            meta={entry.data.shift}
+            cta={t('card.readMore')}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</TabPage>

@@ -28,7 +28,7 @@ const neighbor = (i: number) =>
   title={d.title}
   summary={d.summary}
   meta={d.shift}
-  section={{ name: t('nav.caseStudies'), anchor: 'case-studies' }}
+  section={{ name: t('nav.caseStudies'), path: '/case-studies/' }}
   jsonLd={articleSchema({ lang, path: localizedPath(lang, path), title: d.title, summary: d.summary }, Astro.site!)}
   prev={neighbor(index - 1)}
   next={neighbor(index + 1)}

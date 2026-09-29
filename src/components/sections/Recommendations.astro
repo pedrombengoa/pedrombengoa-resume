@@ -1,0 +1,40 @@
+---
+import { render } from 'astro:content';
+import type { getRecommendations } from '../../lib/content';
+
+interface Props {
+  recommendations: Awaited<ReturnType<typeof getRecommendations>>;
+}
+
+const { recommendations } = Astro.props;
+const items = await Promise.all(recommendations.map(async (r) => ({ data: r.data, Content: (await render(r)).Content })));
+---
+
+<ul class="columns-1 gap-5 md:columns-2">
+  {
+    items.map(({ data, Content }) => (
+      <li class="mb-5 break-inside-avoid">
+        <figure class="card p-6" lang={data.lang}>
+          <blockquote class="prose text-[1rem]">
+            <Content />
+          </blockquote>
+          <figcaption class="mt-5 border-t border-line pt-4 text-sm">
+            <span class="font-semibold">
+              {data.url ? (
+                <a class="link" href={data.url} rel="noopener" target="_blank">
+                  {data.name}
+                </a>
+              ) : (
+                data.name
+              )}
+            </span>
+            <span class="block text-muted">{data.role}</span>
+            {(data.relationship || data.date) && (
+              <span class="block font-mono text-xs text-muted">{[data.relationship, data.date].filter(Boolean).join(' · ')}</span>
+            )}
+          </figcaption>
+        </figure>
+      </li>
+    ))
+  }
+</ul>

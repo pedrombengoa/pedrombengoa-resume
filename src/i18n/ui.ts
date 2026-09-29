@@ -2,7 +2,23 @@ const en = {
   'meta.homeTitle': 'Pedro Bengoa — Solutions Architect & technical leader',
   'meta.homeDescription':
     'Solutions Architect and senior software engineer with nearly 20 years building enterprise systems, leading teams through change, and figuring out what to build, why, and how.',
+  'meta.experienceTitle': 'Experience — Pedro Bengoa',
+  'meta.experienceDescription':
+    'Nearly 20 years across ITX Corp., Despegar.com, Flux IT and Globant: from quality engineering and Java development to solutions architecture and technical leadership.',
+  'meta.skillsTitle': 'Skills — Pedro Bengoa',
+  'meta.skillsDescription':
+    'Technologies Pedro Bengoa has used across his career: AI-enabled engineering, Java and Spring, distributed systems, CI/CD, cloud platforms, quality and observability.',
+  'meta.projectsTitle': 'Projects — Pedro Bengoa',
+  'meta.projectsDescription':
+    'Personal projects by Pedro Bengoa: an AI-native legal case manager, a herd-health platform for veterinarians, and an automated wildlife camera gimbal.',
+  'meta.caseStudiesTitle': 'Case studies — Pedro Bengoa',
+  'meta.caseStudiesDescription':
+    'How Pedro Bengoa approaches problems: AI adoption across teams, core-and-satellite environments, platform migrations and knowledge transfer.',
+  'meta.recommendationsTitle': 'Recommendations — Pedro Bengoa',
+  'meta.recommendationsDescription':
+    'What managers, peers and engineers who worked with Pedro Bengoa say about him, from his LinkedIn recommendations.',
   'nav.label': 'Main navigation',
+  'nav.home': 'Home',
   'nav.about': 'About',
   'nav.reinvention': 'Reinvention',
   'nav.experience': 'Experience',
@@ -11,8 +27,6 @@ const en = {
   'nav.caseStudies': 'Case studies',
   'nav.recommendations': 'Recommendations',
   'nav.contact': 'Contact',
-  'nav.menu': 'Menu',
-  'nav.close': 'Close menu',
   'nav.skip': 'Skip to content',
   'lang.switch': 'Leer en español',
   'lang.switchShort': 'ES',
@@ -45,6 +59,7 @@ const en = {
   'section.caseStudies.title': 'How I approach problems',
   'section.recommendations.eyebrow': 'Recommendations',
   'section.recommendations.title': 'What others say',
+  'section.recommendations.lead': 'From my LinkedIn recommendations, shown exactly as written.',
   'section.education.eyebrow': 'Education',
   'section.education.title': 'Education & languages',
   'section.contact.eyebrow': 'Contact',
@@ -85,7 +100,23 @@ const es: Record<UIKey, string> = {
   'meta.homeTitle': 'Pedro Bengoa — Solutions Architect y líder técnico',
   'meta.homeDescription':
     'Solutions Architect e ingeniero de software senior con casi 20 años construyendo sistemas empresariales, liderando equipos a través del cambio y pensando qué construir, por qué y cómo.',
+  'meta.experienceTitle': 'Experiencia — Pedro Bengoa',
+  'meta.experienceDescription':
+    'Casi 20 años entre ITX Corp., Despegar.com, Flux IT y Globant: de calidad de software y desarrollo Java a arquitectura de soluciones y liderazgo técnico.',
+  'meta.skillsTitle': 'Habilidades — Pedro Bengoa',
+  'meta.skillsDescription':
+    'Tecnologías que Pedro Bengoa usó a lo largo de su carrera: ingeniería con IA, Java y Spring, sistemas distribuidos, CI/CD, plataformas cloud, calidad y observabilidad.',
+  'meta.projectsTitle': 'Proyectos — Pedro Bengoa',
+  'meta.projectsDescription':
+    'Proyectos personales de Pedro Bengoa: un gestor de causas legales nativo en IA, una plataforma de salud de rodeos para veterinarios y un gimbal automatizado para cámaras de fauna.',
+  'meta.caseStudiesTitle': 'Casos — Pedro Bengoa',
+  'meta.caseStudiesDescription':
+    'Cómo encara los problemas Pedro Bengoa: adopción de IA en equipos, ambientes core-and-satellite, migraciones de plataforma y transferencia de conocimiento.',
+  'meta.recommendationsTitle': 'Recomendaciones — Pedro Bengoa',
+  'meta.recommendationsDescription':
+    'Lo que dicen de Pedro Bengoa managers, pares e ingenieros que trabajaron con él, según sus recomendaciones de LinkedIn.',
   'nav.label': 'Navegación principal',
+  'nav.home': 'Inicio',
   'nav.about': 'Sobre mí',
   'nav.reinvention': 'Reinvención',
   'nav.experience': 'Experiencia',
@@ -94,8 +125,6 @@ const es: Record<UIKey, string> = {
   'nav.caseStudies': 'Casos',
   'nav.recommendations': 'Recomendaciones',
   'nav.contact': 'Contacto',
-  'nav.menu': 'Menú',
-  'nav.close': 'Cerrar menú',
   'nav.skip': 'Ir al contenido',
   'lang.switch': 'Read in English',
   'lang.switchShort': 'EN',
@@ -128,6 +157,7 @@ const es: Record<UIKey, string> = {
   'section.caseStudies.title': 'Cómo encaro los problemas',
   'section.recommendations.eyebrow': 'Recomendaciones',
   'section.recommendations.title': 'Lo que dicen otros',
+  'section.recommendations.lead': 'De mis recomendaciones de LinkedIn, tal como fueron escritas (en inglés).',
   'section.education.eyebrow': 'Formación',
   'section.education.title': 'Formación e idiomas',
   'section.contact.eyebrow': 'Contacto',

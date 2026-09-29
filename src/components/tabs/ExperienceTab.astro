@@ -1,0 +1,27 @@
+---
+import TabPage from '../TabPage.astro';
+import Experience from '../sections/Experience.astro';
+import EducationLanguages from '../sections/EducationLanguages.astro';
+import { useTranslations, type Lang } from '../../i18n/utils';
+import { getExperience, getProfile } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const [profile, jobs] = await Promise.all([getProfile(), getExperience()]);
+---
+
+<TabPage
+  lang={lang}
+  path="/experience/"
+  title={t('meta.experienceTitle')}
+  description={t('meta.experienceDescription')}
+  eyebrow={t('section.experience.eyebrow')}
+  heading={t('section.experience.title')}
+>
+  <Experience lang={lang} jobs={jobs} />
+  <EducationLanguages lang={lang} profile={profile} />
+</TabPage>
