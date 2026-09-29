@@ -110,7 +110,7 @@ npx wrangler deploy
 "routes": [{ "pattern": "yourdomain.com", "custom_domain": true }]
 ```
 
-**Auto-deploy (optional):** in the Cloudflare dashboard, go to Workers → `pedrombengoa-site` → Settings → Builds and connect this repository. Use `npm run build` as the build command, and every push to `main` will deploy.
+**Auto-deploy (optional):** in the Cloudflare dashboard, go to Workers → `pedrombengoa-resume` → Settings → Builds and connect this repository. Use `npm run build` as the build command, and every push to `main` will deploy.
 
 ## Before launch
 
