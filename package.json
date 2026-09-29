@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "images": "node scripts/prepare-images.mjs",
     "astro": "astro"
   },
   "dependencies": {

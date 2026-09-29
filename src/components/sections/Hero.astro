@@ -11,7 +11,6 @@ interface Props {
 const { lang, profile } = Astro.props;
 const t = useTranslations(lang);
 const facts = [
-  { key: t('hero.fact.role'), value: profile.headline[lang] },
   { key: t('hero.fact.experience'), value: t('hero.fact.experienceValue') },
   { key: t('hero.fact.focus'), value: t('hero.fact.focusValue') },
   { key: t('hero.fact.location'), value: `${profile.location[lang]} · ${profile.availability[lang]}` },
@@ -54,6 +53,23 @@ const facts = [
         <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
         <span class="h-2.5 w-2.5 rounded-full bg-accent"></span>
         <span class="ml-2 text-xs text-muted">~/pedro</span>
+      </div>
+      <div class="flex items-center gap-5 border-b border-line p-5">
+        <img
+          src="/images/pedro-bengoa.jpg"
+          width="480"
+          height="600"
+          alt={t('hero.photoAlt')}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          class="h-36 w-[7.2rem] shrink-0 rounded-lg object-cover ring-1 ring-line"
+        />
+        <div class="min-w-0">
+          <p class="text-muted"><span class="text-accent" aria-hidden="true">$ </span>whoami</p>
+          <p class="mt-1 text-base font-semibold">pedro.bengoa</p>
+          <p class="mt-1 text-muted">{profile.headline[lang]}</p>
+        </div>
       </div>
       <dl class="space-y-4 p-5">
         {

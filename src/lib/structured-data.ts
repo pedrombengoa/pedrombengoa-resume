@@ -10,6 +10,7 @@ export function personSchema(base: URL) {
     name: site.name,
     jobTitle: 'Solutions Architect',
     url: abs('/', base),
+    image: abs('/images/pedro-bengoa.jpg', base),
     email: `mailto:${site.email}`,
     worksFor: { '@type': 'Organization', name: 'ITX Corp.' },
     address: { '@type': 'PostalAddress', addressLocality: 'La Plata', addressRegion: 'Buenos Aires', addressCountry: 'AR' },

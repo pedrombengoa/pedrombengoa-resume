@@ -36,3 +36,6 @@ desktop.ini
 
 # Raw LinkedIn export (converted into data/recommendations/)
 data/recomendations/
+
+# Uncropped source photo (includes another person); only the cropped output in public/ is published
+data/photo/
