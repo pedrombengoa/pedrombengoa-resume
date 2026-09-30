@@ -1,6 +1,6 @@
 ---
 name: Federico Paterno
-role: 'Solution Lead at ITX Corp.'
+role: 'Solutions Architect at ITX Corp.'
 relationship: 'Reported to Pedro directly'
 date: 'September 2026'
 lang: en

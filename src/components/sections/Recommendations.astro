@@ -1,23 +1,31 @@
 ---
 import { render } from 'astro:content';
 import type { getRecommendations } from '../../lib/content';
+import { useTranslations, type Lang } from '../../i18n/utils';
 
 interface Props {
+  lang: Lang;
   recommendations: Awaited<ReturnType<typeof getRecommendations>>;
 }
 
-const { recommendations } = Astro.props;
+const { lang, recommendations } = Astro.props;
+const t = useTranslations(lang);
 const items = await Promise.all(recommendations.map(async (r) => ({ data: r.data, Content: (await render(r)).Content })));
 ---
 
-<ul class="columns-1 gap-5 md:columns-2">
+<ul
+  class="rec-list grid grid-cols-1 items-start gap-5 md:grid-cols-2"
+  data-read-more={t('section.recommendations.readMore')}
+  data-read-less={t('section.recommendations.readLess')}
+>
   {
     items.map(({ data, Content }) => (
-      <li class="mb-5 break-inside-avoid">
-        <figure class="card p-6" lang={data.lang}>
-          <blockquote class="prose text-[1rem]">
+      <li>
+        <figure class="rec-card card flex flex-col p-6" lang={data.lang}>
+          <blockquote class="rec-quote prose text-[1rem]">
             <Content />
           </blockquote>
+          <button type="button" class="rec-toggle link mt-3 self-start font-mono text-xs" aria-expanded="false" hidden />
           <figcaption class="mt-5 border-t border-line pt-4 text-sm">
             <span class="font-semibold">
               {data.url ? (
@@ -38,3 +46,57 @@ const items = await Promise.all(recommendations.map(async (r) => ({ data: r.data
     ))
   }
 </ul>
+
+<style>
+  /* Clamping only kicks in once the script runs, so without JS every quote shows in full. */
+  .rec-list[data-ready] .rec-card:not([data-expanded]) {
+    height: 30rem;
+  }
+  .rec-list[data-ready] .rec-card:not([data-expanded]) .rec-quote {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .rec-list[data-ready] .rec-card[data-overflowing]:not([data-expanded]) .rec-quote {
+    mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  }
+  .rec-toggle {
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  for (const list of document.querySelectorAll<HTMLElement>('.rec-list')) {
+    const { readMore = '', readLess = '' } = list.dataset;
+    const cards = [...list.querySelectorAll<HTMLElement>('.rec-card')];
+    list.dataset.ready = '';
+
+    const measure = () => {
+      for (const card of cards) {
+        if (card.hasAttribute('data-expanded')) continue;
+        const quote = card.querySelector<HTMLElement>('.rec-quote')!;
+        const button = card.querySelector<HTMLButtonElement>('.rec-toggle')!;
+        const overflowing = quote.scrollHeight > quote.clientHeight + 1;
+        card.toggleAttribute('data-overflowing', overflowing);
+        button.hidden = !overflowing;
+      }
+    };
+
+    for (const card of cards) {
+      const button = card.querySelector<HTMLButtonElement>('.rec-toggle')!;
+      button.textContent = readMore;
+      button.addEventListener('click', () => {
+        const expanded = card.toggleAttribute('data-expanded');
+        button.textContent = expanded ? readLess : readMore;
+        button.setAttribute('aria-expanded', String(expanded));
+        if (!expanded) {
+          measure();
+          card.scrollIntoView({ block: 'nearest' });
+        }
+      });
+    }
+
+    measure();
+    window.addEventListener('resize', measure);
+  }
+</script>

@@ -22,5 +22,5 @@ const recommendations = await getRecommendations();
   heading={t('section.recommendations.title')}
   lead={t('section.recommendations.lead')}
 >
-  <Recommendations recommendations={recommendations} />
+  <Recommendations lang={lang} recommendations={recommendations} />
 </TabPage>

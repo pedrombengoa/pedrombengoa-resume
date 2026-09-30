@@ -4,7 +4,7 @@ role: 'Software Engineer V at Paychex'
 relationship: 'Worked with Pedro on different teams'
 date: 'September 2026'
 lang: en
-order: 3
+order: 6
 ---
 
 Pedro and I weren’t on the same team, but we crossed paths constantly — and every time, he made the work better. No matter how complicated or messy the technical challenge was, Pedro stayed patient, steady, and optimistic. He never let difficult problems get to him.

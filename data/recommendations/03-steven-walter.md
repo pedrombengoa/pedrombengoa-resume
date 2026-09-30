@@ -1,10 +1,10 @@
 ---
 name: Steven Walter
-role: 'Certified Scrum Master (CSM®) | Advanced Certified Product Owner (A-CSPO®)'
+role: 'Program Manager at ITX Corp.'
 relationship: 'Senior to Pedro, did not manage him directly'
 date: 'September 2026'
 lang: en
-order: 2
+order: 3
 ---
 
 I've had the privilege of working alongside Pedro for many years, and I can honestly say he's one of those rare people who leaves a lasting impact on everyone he works with.
