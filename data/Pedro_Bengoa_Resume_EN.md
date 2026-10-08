@@ -2,7 +2,7 @@
 
 **Solutions Architect | Technical Leadership | Engineering Enablement | AI-enabled SDLC Transformation**  
 La Plata, Buenos Aires, Argentina | Open to remote and selective hybrid roles  
-pedrombengoa@gmail.com | https://www.linkedin.com/in/pedro-bengoa-16314a2b
+pedrombengoa@gmail.com | https://www.linkedin.com/in/pedrombengoa
 
 ## Professional Summary
 
